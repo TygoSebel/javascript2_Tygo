@@ -14,13 +14,17 @@ Maak een kortingscalculator voor een webshop: de klant vult een bestelbedrag en 
 
 > Bijvoorbeeld: bij een bestelbedrag van €100 en 10% korting betaal je `100 - (100 * 10 / 100)` = €90.
 
-## Stappen
+## St
+
+
+
+pen
 
 ### Stap 1 — Functie schrijven (~30 min)
 Schrijf de functie `calculateTotal(bedrag, korting)` die het te betalen bedrag berekent na aftrek van het kortingspercentage.
 
 ### Stap 2 — Formulier laten werken (~45 min)
-Voeg een submit event listener toe aan `#discount-form`. Lees de waarden van `#amount` en `#discount` uit, roep je functie aan en toon het resultaat in `#result`: het te betalen bedrag (afgerond op 2 decimalen met `.toFixed(2)`).
+Voeg een submit event listener toe aan `#disceeeount-form`. Lees de waarden van `#amount` en `#discount` uit, roep je functie aan en toon het resultaat in `#result`: het te betalen bedrag (afgerond op 2 decimalen met `.toFixed(2)`).
 
 ### Stap 3 — Foutmelding bij lege invoer (~30 min)
 Als het bedrag- of kortingsveld leeg is, toon dan een foutmelding in `#result` in plaats van te rekenen.

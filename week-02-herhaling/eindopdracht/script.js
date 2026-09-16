@@ -1,4 +1,25 @@
-// Stap 1: Schrijf calculateTotal(bedrag, korting)
-// Stap 2: Luister naar het submit-event, lees de invoervelden uit met .value en toon het resultaat
-// Stap 3: Toon een foutmelding in #result als het bedrag of de korting leeg is
-// Bonus: Schrijf getKlantniveau(bedrag) en toon het niveau erbij
+let submit = document.getElementById('submit')
+let result = document.getElementById('result')
+let bedrag = document.getElementById('bedrag')  
+let korting = document.getElementById('korting')
+let amount = document.getElementById('amount')
+let discount = document.getElementById('discount')
+ 
+console.log(amount, discount)
+ 
+
+submit.addEventListener('click', function(e){
+    e.preventDefault();
+    console.log(amount.value, discount.value)
+ 
+  result.textContent = ""+ optellen(amount.value, discount.value);
+})
+ 
+ 
+function optellen(a, b) {
+ 
+  return 100 - (100 * b / 100);
+}
+ 
+ 
+ 
