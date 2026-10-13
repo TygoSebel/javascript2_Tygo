@@ -7,26 +7,54 @@ const users = [
 
 let filter = 'all';
 
-const showUsers = (users) => {
-  // Gebruik destructuring voor elke user: const { name, email, role, active } = user
-  // Toon elke user als een <article> in #users
-};
+function showUsers(usersToShow) {
+  const userList = document.querySelector('#users');
+  userList.replaceChildren();
 
-const filterUsers = () => {
-  // Als filter 'admin' is, toon alleen gebruikers met role === 'admin'
-  // Anders toon je alle gebruikers
-  // Roep showUsers() aan met de gefilterde lijst
-};
+  usersToShow.forEach((user) => {
+    const { name, email, role, active } = user;
+    const card = document.createElement('article');
+    const heading = document.createElement('h3');
+    const details = document.createElement('p');
 
-// Maak een eventlistener voor de #filter-admin button
-// Zet filter op 'admin' en roep filterUsers() aan
+    heading.textContent = name;
+    details.textContent = `${email} | ${role} | ${active ? 'Actief' : 'Niet actief'}`;
 
-// Maak een eventlistener voor de #filter-all button
-// Zet filter op 'all' en roep filterUsers() aan
+    card.append(heading, details);
+    userList.append(card);
+  });
+}
 
-// Maak een eventlistener voor het #user-form submit event
-// Lees naam, email en role uit de invoervelden
-// Maak een nieuw user object aan met spread op een default object
-// Voeg toe aan de array en roep filterUsers() aan
+function filterUsers() {
+  if (filter === 'admin') {
+    showUsers(users.filter((user) => user.role === 'admin'));
+  } else {
+    showUsers(users);
+  }
+}
+
+document.querySelector('#filter-admin').addEventListener('click', () => {
+  filter = 'admin';
+  filterUsers();
+});
+
+document.querySelector('#filter-all').addEventListener('click', () => {
+  filter = 'all';
+  filterUsers();
+});
+
+document.querySelector('#user-form').addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const name = document.querySelector('#name').value.trim();
+  const email = document.querySelector('#email').value.trim();
+  const role = document.querySelector('#role').value;
+  const defaultUser = { active: true };
+
+  users.push({ ...defaultUser, name, email, role });
+
+  event.currentTarget.reset();
+  filterUsers();
+});
 
 filterUsers();
