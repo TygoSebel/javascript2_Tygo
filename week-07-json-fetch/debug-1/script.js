@@ -1,7 +1,7 @@
 // Fout gevonden: _______________
 // Oplossing: _______________
 
-fetch('./new.json')
+fetch('./news.json')
   .then(r => r.json())
   .then(messages => {
     const list = document.querySelector('#results');

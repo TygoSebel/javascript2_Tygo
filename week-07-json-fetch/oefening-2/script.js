@@ -1,4 +1,17 @@
-// Vul eerst movies.json met minimaal 4 films:
-// [{"title":"","director":"","year":0,"genre":""}]
+fetch('./movies.json')
+  .then(response => response.json())
+  .then(movies => {
+    const filmsSection = document.querySelector('#films');
+    for (const movie of movies) {
+      const article = document.createElement('article');
+      const title = document.createElement('h2');
+      const details = document.createElement('p');
 
-// Schrijf daarna de fetch zelf (zelfde patroon als oefening 1)
+      title.textContent = movie.title;
+      details.textContent = `${movie.director} · ${movie.year} · ${movie.genre}`;
+
+      article.append(title, details);
+      filmsSection.appendChild(article);
+    }
+  })
+  .catch(error => console.error('Fout bij het laden van films:', error));

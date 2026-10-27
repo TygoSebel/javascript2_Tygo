@@ -1,1 +1,6 @@
-[]
+[
+  { "title": "The Matrix", "director": "Lana Wachowski en Lilly Wachowski", "year": 1999, "genre": "Sciencefiction" },
+  { "title": "Jurassic Park", "director": "Steven Spielberg", "year": 1993, "genre": "Avontuur" },
+  { "title": "Spirited Away", "director": "Hayao Miyazaki", "year": 2001, "genre": "Animatie" },
+  { "title": "Inception", "director": "Christopher Nolan", "year": 2010, "genre": "Sciencefiction" }
+]

@@ -4,7 +4,7 @@
 
 - [JSON & fetch](https://meesterjson.nl/cheat-sheet/pages/javascript/json.html) — JSON-structuur, `fetch()` en `.then()`
 
-Vul `films.json` met minimaal 4 films. Gebruik deze structuur:
+Vul `movies.json` met minimaal 4 films. Gebruik deze structuur:
 
 ```json
 [
