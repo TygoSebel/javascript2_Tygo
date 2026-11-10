@@ -1,5 +1,14 @@
 const user = { name: 'Anna', age: 28, city: 'Amsterdam' };
 
-// Stap 1: sla het object op zonder JSON.stringify en lees het terug — wat zie je?
-// Stap 2: sla het object op MET JSON.stringify en lees het terug met JSON.parse
-// Stap 3: toon het resultaat van beide methoden op de pagina
+const zonderJson = document.getElementById('zonder-json');
+const metJson = document.getElementById('met-json');
+
+localStorage.setItem('userWithoutJson', user);
+const rawValue = localStorage.getItem('userWithoutJson');
+
+const jsonValue = JSON.stringify(user);
+localStorage.setItem('userWithJson', jsonValue);
+const parsedValue = JSON.parse(localStorage.getItem('userWithJson'));
+
+zonderJson.innerHTML += `<p>${rawValue}</p>`;
+metJson.innerHTML += `<p>Naam: ${parsedValue.name}</p><p>Leeftijd: ${parsedValue.age}</p><p>Stad: ${parsedValue.city}</p>`;
